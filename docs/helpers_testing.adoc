@@ -9,7 +9,7 @@ ____
 The testClient() function takes an instance of Hono as its first argument and returns an object typed according to your Hono application's routes, similar to the https://hono.dev/docs/guides/rpc#client[Hono Client].
 ____
 
-この説明文が何を意味しているか、よくわからない。研究してみよう。
+この文が何を意味しているか、よくわからない。研究してみよう。
 
 [source,typescript]
 ----
@@ -21,7 +21,7 @@ ____
         });
 ----
 
-こんなふうに `testClient`` のインスタンスである `client` は `seach` プロパティを持っていて、`search` プロパティの `$get` メソッドを呼び出すことができる。この短いコードで  `index.ts` の中で定義されたHonoオブジェクトの持つrouteの一つ、すなわち
+こんなふうに `testClient`` のインスタンスである `client` は `search` プロパティを持っている。`search` プロパティの `$get` メソッドを呼び出すことができる。この短いコードで  `index.ts` の中で定義されたHonoオブジェクトに定義された route の一つ、すなわち
 
 [source,typescript]
 ----
@@ -32,11 +32,7 @@ const app = new Hono()
     })
 ----
 
-を呼び出すことができる。
-
-少し横道に逸れるが、上記のテストと同じ役割を果たすtestを `testClient` を使わずに書いてみよう。どんなコードになるか？
-
-duckduckgoのSearch assist AIに質問してみた。
+を呼び出すことができる。それはわかった。では、上記のテストと同じことをするtestを `testClient` を使わずに書いてみよう。どんなコードになるか？duckduckgoのSearch assist AIに質問してみた。
 
 [quote]
 ____
@@ -115,7 +111,7 @@ describe('POST /posts', () => {
 
 By creating requests manually and passing them to your Hono application, you can effectively test your endpoints without relying on testClient. This method allows for flexibility in testing various HTTP methods and scenarios.
 
-ふむふむ、参考になった。コードを自作してみよう。
+ふむふむ、参考になった。ではコードを自作してみよう。まずサーバのコードがこれ。
 
 {BRANCH_URL}/packages/testclient/src/index.ts[testclient/src/index.ts]
 [source,typescript]
@@ -123,15 +119,15 @@ By creating requests manually and passing them to your Hono application, you can
 include::../packages/testclient/src/index.ts[]
 ----
 
+そしてサーバをテストするコードがこれ。このコードは二つのtestを実装している。
+
 {BRANCH_URL}/packages/testclient/src/index.ts[testclient/src/index.test.ts]
 [source,typescript]
 ----
 include::../packages/testclient/src/index.test.ts[]
 ----
 
-二つのtestは同じことをする。ただし前者はtestClientを使っているが後者はtestClientを使わずにやっている。
-
-appがrouteに型を明示的に宣言していればtestClientを使ったコードを書くときTypeScript言語の型検査が動く。だからたとえば私がエディタで
+二つのtestは同じことをする。ただし前者はtestClientを使っているが後者はtestClientを使わずにやっている。appがrouteに型を明示的に宣言していればtestClientを使ったコードを書くときTypeScript言語の型検査が動く。だからたとえば私がエディタで
 
 [source,typescript]
 ----
@@ -149,6 +145,6 @@ image:images/helpers_testing/searche.png[]
     ... = new Request('http://localhost/searche?q=hono', { method: 'GET' })
 ----
 
-のようにstringリテラルの中でsearchをsearcheと書いたらどうか？ ... エディタは書き間違いを指摘することができない。
+のようにstringリテラルの中でsearchをsearcheと書いたらどうか？ ... エディタはわたしがやらかした間違いを指摘することができない。
 
 このように `testClient` はTypeScript言語の型検査の力をオーサリング時に享受できるようにしてくれる。testClientを使わなければ型検査の力を享受できない。この違いは大きい。だから testClient を活用するべきだ。
