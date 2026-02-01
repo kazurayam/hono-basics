@@ -1,0 +1,21 @@
+{
+  "name": "hono-basics",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test:rpc": "bun test --cwd ./packages/rpc",
+    "test:testclient": "bun test --cwd ./packages/testclient",
+    "test:testing": "bun test --cwd ./packages/testing",
+    "docs": "cd docs; ./adoc2md.sh -t; cd ~"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

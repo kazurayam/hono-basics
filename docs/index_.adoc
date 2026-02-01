@@ -1,0 +1,9 @@
+:REPOS_URL: https://github.com/kazurayam/hono-basics
+:BRANCH_URL: {REPOS_URL}/blob/master
+:DOCS_URL: httpd://kazurayam.github.io/
+
+= Honoを基本から学ぶ
+
+include::./guides_testing.adoc[]
+
+include::./helpers_testing.adoc[]
