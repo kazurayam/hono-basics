@@ -11,6 +11,42 @@
         "typescript": "^5",
       },
     },
+    "packages/rpcclient": {
+      "name": "@kazurayam/hono-basics-rpcclient",
+      "dependencies": {
+        "hono": "latest",
+      },
+      "devDependencies": {
+        "@types/bun": "^latest",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
+    "packages/rpcserver": {
+      "name": "@kazurayam/hono-basics-rpcserver",
+      "dependencies": {
+        "hono": "^latest",
+      },
+      "devDependencies": {
+        "@types/bun": "^latest",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
+    "packages/testclient": {
+      "name": "@kazurayam/hono-basics-testclient",
+      "dependencies": {
+        "hono": "latest",
+      },
+      "devDependencies": {
+        "@types/bun": "^latest",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "packages/testing": {
       "name": "@kazurayam/hono-basics-testing",
       "dependencies": {
@@ -25,6 +61,12 @@
     },
   },
   "packages": {
+    "@kazurayam/hono-basics-rpcclient": ["@kazurayam/hono-basics-rpcclient@workspace:packages/rpcclient"],
+
+    "@kazurayam/hono-basics-rpcserver": ["@kazurayam/hono-basics-rpcserver@workspace:packages/rpcserver"],
+
+    "@kazurayam/hono-basics-testclient": ["@kazurayam/hono-basics-testclient@workspace:packages/testclient"],
+
     "@kazurayam/hono-basics-testing": ["@kazurayam/hono-basics-testing@workspace:packages/testing"],
 
     "@types/bun": ["@types/bun@1.3.8", "", { "dependencies": { "bun-types": "1.3.8" } }, "sha512-3LvWJ2q5GerAXYxO2mffLTqOzEu5qnhEAlh48Vnu8WQfnmSwbgagjGZV6BoHKJztENYEDn6QmVd949W4uESRJA=="],

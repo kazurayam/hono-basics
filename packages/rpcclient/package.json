@@ -1,6 +1,6 @@
 {
-    "name": "@kazurayam/hono-basics-testclient",
-    "module": "src/index",
+    "name": "@kazurayam/hono-basics-rpcclient",
+    "module": "src/client",
     "type": "module",
     "private": true,
     "dependencies": {

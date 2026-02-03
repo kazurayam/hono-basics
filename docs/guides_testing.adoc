@@ -43,7 +43,7 @@ src/sample.test.ts:
 Ran 6 tests across 1 file. [13.00ms]
 ```
 
-後者のtestがPASSしたという事実から推測するに、Requestクラスのコンストラクタの第一引数として指定したURL文字列の hostname と port をapp.request()が無視している。
+後者のtestがPASSしたという事実から推測するに、Requestクラスのコンストラクタの第一引数として指定したURL文字列の protocol と hostname と port を `app.request(url, )` が無視している。
 
 そうなのか？
 

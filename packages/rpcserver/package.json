@@ -1,10 +1,13 @@
 {
-    "name": "@kazurayam/hono-basics-testclient",
-    "module": "src/index",
+    "name": "@kazurayam/hono-basics-rpcserver",
+    "module": "src/server",
     "type": "module",
     "private": true,
+    "exports": {
+        ".": "./src/server.ts"
+    },
     "dependencies": {
-        "hono": "latest"
+        "hono": "^latest"
     },
     "devDependencies": {
         "@types/bun": "^latest"
