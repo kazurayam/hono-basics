@@ -6,7 +6,7 @@ import { zValidator } from '@hono/zod-validator'
 const schema = z.object({
   title: z.string(),
   body: z.string(),
-})git 
+})
 
 const route = new Hono()
     .post(
@@ -17,5 +17,10 @@ const route = new Hono()
             return c.json({ ok: true, message: `Created!`, data }, 201);
         }
     )
+
+export default {
+    port: 8787,
+    fetch: route.fetch
+}
 
 export type AppType = typeof route

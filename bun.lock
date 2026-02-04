@@ -14,6 +14,7 @@
     "packages/rpcclient": {
       "name": "@kazurayam/hono-basics-rpcclient",
       "dependencies": {
+        "@kazurayam/hono-basics-rpcserver": "workspace:^",
         "hono": "latest",
       },
       "devDependencies": {
@@ -26,7 +27,8 @@
     "packages/rpcserver": {
       "name": "@kazurayam/hono-basics-rpcserver",
       "dependencies": {
-        "hono": "^latest",
+        "@hono/zod-validator": "^0.7.6",
+        "hono": "^4.11.7",
       },
       "devDependencies": {
         "@types/bun": "^latest",
@@ -61,6 +63,8 @@
     },
   },
   "packages": {
+    "@hono/zod-validator": ["@hono/zod-validator@0.7.6", "", { "peerDependencies": { "hono": ">=3.9.0", "zod": "^3.25.0 || ^4.0.0" } }, "sha512-Io1B6d011Gj1KknV4rXYz4le5+5EubcWEU/speUjuw9XMMIaP3n78yXLhjd2A3PXaXaUwEAluOiAyLqhBEJgsw=="],
+
     "@kazurayam/hono-basics-rpcclient": ["@kazurayam/hono-basics-rpcclient@workspace:packages/rpcclient"],
 
     "@kazurayam/hono-basics-rpcserver": ["@kazurayam/hono-basics-rpcserver@workspace:packages/rpcserver"],
@@ -80,5 +84,7 @@
     "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
     "undici-types": ["undici-types@7.16.0", "", {}, "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="],
+
+    "zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
   }
 }

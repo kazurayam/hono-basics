@@ -4,7 +4,8 @@
     "type": "module",
     "private": true,
     "dependencies": {
-        "hono": "latest"
+        "hono": "latest",
+        "@kazurayam/hono-basics-rpcserver": "workspace:^"
     },
     "devDependencies": {
         "@types/bun": "^latest"

@@ -7,10 +7,13 @@
     "packages/*"
   ],
   "scripts": {
-    "test:rpc": "bun test --cwd ./packages/rpc",
+    "test:rpcserver": "bun test --cwd ./packages/rpcserver",
+    "test:rpcclient": "bun test --cwd ./packages/rpcclient",
     "test:testclient": "bun test --cwd ./packages/testclient",
     "test:testing": "bun test --cwd ./packages/testing",
-    "docs": "cd docs; ./adoc2md.sh -t; cd ~"
+    "docs": "cd docs; ./adoc2md.sh -t; cd ~",
+    "rpcserver": "bun --cwd ./packages/rpcserver ./src/server.ts",
+    "rpcclient": "bun --cwd ./packages/rpcclient ./src/client.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"

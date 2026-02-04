@@ -3,6 +3,9 @@
     "module": "src/index",
     "type": "module",
     "private": true,
+    "exports": {
+        ".": "./src/server.ts"
+    },
     "dependencies": {
         "hono": "latest"
     },
