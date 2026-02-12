@@ -11,10 +11,11 @@
     "test:rpcclient": "bun test --cwd ./packages/rpcclient",
     "test:testclient": "bun test --cwd ./packages/testclient",
     "test:testing": "bun test --cwd ./packages/testing",
+    "test:html": "bun test --cwd ./packages/html",
     "docs": "cd docs; ./adoc2md.sh -t; cd ~",
     "rpcserver": "bun --cwd ./packages/rpcserver ./src/server.ts",
     "rpcclient": "bun --cwd ./packages/rpcclient ./src/client.ts",
-    "htmlserver": "bun --cwd ./packages/html ./src/index.ts"
+    "htmlserver": "bun --cwd ./packages/html ./src/index.ts",
   },
   "devDependencies": {
     "@types/bun": "latest"

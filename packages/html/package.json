@@ -7,6 +7,7 @@
         "hono": "latest"
     },
     "devDependencies": {
+        "@happy-dom/global-registrator": "^20.6.1",
         "@types/bun": "^latest"
     },
     "peerDependencies": {
