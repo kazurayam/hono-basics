@@ -17,8 +17,9 @@
     "rpcclient": "bun --cwd ./packages/rpcclient --watch ./src/client.ts",
     "htmlserver": "bun --cwd ./packages/html --watch ./src/index.ts",
     "jsxserver": "bun --cwd ./packages/jsx --hot ./src/index.tsx",
-    "jsxhtmlserver": "bun --cwd ./packages/jsx-html --hot ./src/index.tsx"
-  },
+    "jsxhtmlserver": "bun --cwd ./packages/jsx-html --hot ./src/index.tsx",
+    "jsxrendererserver": "bun --cwd ./packages/jsx-renderer --hot ./src/index.tsx"
+},
   "devDependencies": {
     "@types/bun": "latest"
   },

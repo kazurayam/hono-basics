@@ -1,5 +1,5 @@
 {
-    "name": "@kazurayam/hono-basics-jsx-html",
+    "name": "@kazurayam/hono-basics-jsx-renderer",
     "module": "src/index",
     "type": "module",
     "private": true,
