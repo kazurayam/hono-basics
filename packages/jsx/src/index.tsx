@@ -2,10 +2,11 @@
 
 import { Hono } from 'hono'
 import type { FC } from 'hono/jsx'
-import { memo, createContext, useContext } from 'hono/jsx'
-
 // FCとはReact用語のFunction Componentの略。
 // Function ComponentとはJSXを返す関数をReactコンポーネントとしてみるという意味。
+
+import { memo, createContext, useContext } from 'hono/jsx'
+import { html } from 'hono/html'
 
 const app = new Hono()
 
@@ -128,5 +129,6 @@ app.get('/asynccomponent', (c) => {
         <AsyncComponent />
     )
 })
+
 
 export default app

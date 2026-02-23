@@ -24,6 +24,32 @@
         "typescript": "^5",
       },
     },
+    "packages/jsx": {
+      "name": "@kazurayam/hono-basics-jsx",
+      "dependencies": {
+        "hono": "latest",
+      },
+      "devDependencies": {
+        "@happy-dom/global-registrator": "^20.6.1",
+        "@types/bun": "^latest",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
+    "packages/jsx-html": {
+      "name": "@kazurayam/hono-basics-jsx-html",
+      "dependencies": {
+        "hono": "latest",
+      },
+      "devDependencies": {
+        "@happy-dom/global-registrator": "^20.6.1",
+        "@types/bun": "^latest",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "packages/rpcclient": {
       "name": "@kazurayam/hono-basics-rpcclient",
       "dependencies": {
@@ -82,6 +108,10 @@
 
     "@kazurayam/hono-basics-html": ["@kazurayam/hono-basics-html@workspace:packages/html"],
 
+    "@kazurayam/hono-basics-jsx": ["@kazurayam/hono-basics-jsx@workspace:packages/jsx"],
+
+    "@kazurayam/hono-basics-jsx-html": ["@kazurayam/hono-basics-jsx-html@workspace:packages/jsx-html"],
+
     "@kazurayam/hono-basics-rpcclient": ["@kazurayam/hono-basics-rpcclient@workspace:packages/rpcclient"],
 
     "@kazurayam/hono-basics-rpcserver": ["@kazurayam/hono-basics-rpcserver@workspace:packages/rpcserver"],
@@ -115,6 +145,10 @@
     "ws": ["ws@8.19.0", "", { "peerDependencies": { "bufferutil": "^4.0.1", "utf-8-validate": ">=5.0.2" }, "optionalPeers": ["bufferutil", "utf-8-validate"] }, "sha512-blAT2mjOEIi0ZzruJfIhb3nps74PRWTCz1IjglWEEpQl5XS/UNama6u2/rjFkDDouqr4L67ry+1aGIALViWjDg=="],
 
     "zod": ["zod@4.3.6", "", {}, "sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg=="],
+
+    "@kazurayam/hono-basics-jsx/hono": ["hono@4.12.2", "", {}, "sha512-gJnaDHXKDayjt8ue0n8Gs0A007yKXj4Xzb8+cNjZeYsSzzwKc0Lr+OZgYwVfB0pHfUs17EPoLvrOsEaJ9mj+Tg=="],
+
+    "@kazurayam/hono-basics-jsx-html/hono": ["hono@4.12.2", "", {}, "sha512-gJnaDHXKDayjt8ue0n8Gs0A007yKXj4Xzb8+cNjZeYsSzzwKc0Lr+OZgYwVfB0pHfUs17EPoLvrOsEaJ9mj+Tg=="],
 
     "@kazurayam/hono-basics-rpcclient/hono": ["hono@4.11.7", "", {}, "sha512-l7qMiNee7t82bH3SeyUCt9UF15EVmaBvsppY2zQtrbIhl/yzBTny+YUxsVjSjQ6gaqaeVtZmGocom8TzBlA4Yw=="],
 
