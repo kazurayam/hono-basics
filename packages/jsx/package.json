@@ -1,0 +1,16 @@
+{
+    "name": "@kazurayam/hono-basics-jsx",
+    "module": "src/index",
+    "type": "module",
+    "private": true,
+    "dependencies": {
+        "hono": "latest"
+    },
+    "devDependencies": {
+        "@happy-dom/global-registrator": "^20.6.1",
+        "@types/bun": "^latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    }
+}
