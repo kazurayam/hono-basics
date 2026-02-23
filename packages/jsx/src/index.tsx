@@ -2,7 +2,7 @@
 
 import { Hono } from 'hono'
 import type { FC } from 'hono/jsx'
-import { memo } from 'hono/jsx'
+import { memo, createContext, useContext } from 'hono/jsx'
 
 // FCとはReact用語のFunction Componentの略。
 // Function ComponentとはJSXを返す関数をReactコンポーネントとしてみるという意味。
@@ -82,6 +82,39 @@ app.get('/memorization', (c) => {
             <p>Hono is cool!</p>
             <Footer />
         </>
+    )
+})
+
+// Context
+const themes = {
+    light: {
+        color: '#000000',
+        background: '#eeeeee',
+    },
+    dark: {
+        color: '#ffffff',
+        background: '#222222',
+    }
+}
+const ThemeContext = createContext(themes.light)    // set the default theme to be light
+const Button: FC = () => {
+    const theme = useContext(ThemeContext)
+    return <button style={ theme }>Push!</button>
+}
+const Toolbar: FC = () => {
+    return (
+        <div>
+            <Button />
+        </div>
+    )
+}
+app.get('/context', (c) => {
+    return c.render(
+        <div>
+            <ThemeContext.Provider value={themes.dark}>
+                <Toolbar />
+            </ThemeContext.Provider>
+        </div>
     )
 })
 
