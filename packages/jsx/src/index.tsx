@@ -45,4 +45,25 @@ const Top: FC<{ messages: string[] }> = (props: {
     )
 }
 
+app.get('/about', (c) => {
+    return c.render(
+        <>
+            <title>About Page</title>
+            <meta name='description' content='This is the about page' />
+            <p>This is the About page.</p>
+            <List />
+        </>
+    )
+})
+
+const List = () => {
+    return (
+        <>
+            <p>first child</p>
+            <p>second child</p>
+            <p>third child</p>
+        </>
+    )
+}
+
 export default app
