@@ -118,4 +118,15 @@ app.get('/context', (c) => {
     )
 })
 
+// Async Component
+const AsyncComponent = async () => {
+    await new Promise((r) => setTimeout(r, 1000)) // sleep 1 s
+    return <div>Done!</div>
+}
+app.get('/asynccomponent', (c) => {
+    return c.render(
+        <AsyncComponent />
+    )
+})
+
 export default app
