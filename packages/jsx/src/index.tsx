@@ -2,6 +2,8 @@
 
 import { Hono } from 'hono'
 import type { FC } from 'hono/jsx'
+import { memo } from 'hono/jsx'
+
 // FCとはReact用語のFunction Componentの略。
 // Function ComponentとはJSXを返す関数をReactコンポーネントとしてみるという意味。
 
@@ -67,8 +69,20 @@ const List = () => {
 }
 
 app.get('/foo', (c) => {
-    const inner = { __html: 'JSX &middot; SSR' }
+    const inner = { __html: 'JSX &middot; SSR' }   // &middot; is a middle-dot
     return c.render(<div dangerouslySetInnerHTML={inner} />)
+})
+
+const Header = memo(() => <header>Welcome to Hono</header>)
+const Footer = memo(() => <footer>Powered by Hono</footer>)
+app.get('/memorization', (c) => {
+    return c.render(
+        <>
+            <Header />
+            <p>Hono is cool!</p>
+            <Footer />
+        </>
+    )
 })
 
 export default app
