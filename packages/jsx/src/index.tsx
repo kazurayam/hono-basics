@@ -66,4 +66,9 @@ const List = () => {
     )
 }
 
+app.get('/foo', (c) => {
+    const inner = { __html: 'JSX &middot; SSR' }
+    return c.render(<div dangerouslySetInnerHTML={inner} />)
+})
+
 export default app
