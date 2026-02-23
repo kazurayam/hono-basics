@@ -9,6 +9,7 @@ within components through the use of useRequestContext().
  */
 import { Hono } from 'hono'
 import { jsxRenderer, useRequestContext } from 'hono/jsx-renderer'
+import { Suspense } from "hono/jsx/streaming"
 
 const app = new Hono()
 
@@ -32,6 +33,38 @@ app.get('/page/*',
 
 app.get('/page/about', (c) => {
     return c.render(<h1>About me!</h1>)
+})
+
+
+// Stream content
+const AsyncComponent = async () => {
+  await new Promise((r) => setTimeout(r, 1000))  // sleep 1second
+  return <div>Hi!</div>
+}
+
+app.get(
+  '/stream/*',
+  jsxRenderer(
+    ({ children }) => {
+      return (
+        <html>
+          <body>
+            <h1>Server-side-rendering Streaming</h1>
+            { children }
+          </body>
+        </html>
+      )
+    },
+    { stream: true}
+  )
+)
+
+app.get('/stream', (c) => {
+  return c.render(
+    <Suspense fallback={<div>loading...</div>}>
+      <AsyncComponent />
+    </Suspense>
+  )
 })
 
 export default app
