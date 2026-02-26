@@ -55,4 +55,29 @@ app.get('/api/animal/:type?', (c) => {
     return c.text(`Animal ${t}!`)
 })
 
+// Regexp
+app.get('/post/:date{[0-9]+}/:title{[a-z]+}', async (c) => {
+    const { date, title } = c.req.param()
+    return c.text(`date: ${date}, title: ${title}`)
+})
+
+// Including slashes
+app.get('/files/:filename{.+\\.png}', async (c) => {
+    const { filename } = c.req.param()
+    return c.text(`filename: ${filename}`)
+})
+
+// Chained route
+app
+    .get('/endpoint', (c) => {
+        return c.text('GET /endpoint')
+    })
+    .post('/endpoint', (c) => {
+        return c.text('POST /endpoint')
+    })
+    .delete('/endpoint', (c) => {
+        return c.text('DELETE /endpoint')
+    })
+
+
 export default app

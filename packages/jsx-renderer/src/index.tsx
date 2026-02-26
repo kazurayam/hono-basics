@@ -9,6 +9,7 @@ within components through the use of useRequestContext().
 See https://hono.dev/docs/middleware/builtin/jsx-renderer
  */
 import { Hono } from 'hono'
+import type { FC } from 'hono/jsx'
 import { jsxRenderer } from 'hono/jsx-renderer'
 import { Suspense } from "hono/jsx/streaming"
 import { logger } from 'hono/logger'
@@ -87,7 +88,7 @@ app.use(
 )
 const blog = new Hono()
 blog.use(
-    jsxRenderer(({ children, Layout }) => {
+    jsxRenderer(({ children, Layout: FC }) => {
         return (
             <Layout>
                 <nav>Blog Menu</nav>

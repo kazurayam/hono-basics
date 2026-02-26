@@ -119,3 +119,43 @@ describe('Optional Parameter', () => {
         expect(await res.text()).toBe('Animal lizard!')
     })
 })
+
+describe('Regexp', () => {
+    test('GET /post/20260226/whoknows', async () => {
+        const res = await app.request('/post/20260226/whoknows', { method: 'GET' })
+        expect(res.status).toBe(200)
+        expect(await res.text()).toBe('date: 20260226, title: whoknows')
+    })
+})
+
+describe('Including slashes', () => {
+    test('GET /files/data.png', async () => {
+        const res = await app.request('/files/data.png', { method: 'GET' })
+        expect(res.status).toBe(200)
+        expect(await res.text()).toBe('filename: data.png')
+    })
+    test('GET /files/dir/data.png', async () => {
+        const res = await app.request('/files/dir/data.png', { method: 'GET' })
+        expect(res.status).toBe(200)
+        expect(await res.text()).toBe('filename: dir/data.png')
+    })
+})
+
+describe('Chained route', () => {
+    test('GET /endpoint', async () => {
+        const res = await app.request('/endpoint', { method: 'GET' })
+        expect(res.status).toBe(200)
+        expect(await res.text()).toBe('GET /endpoint')
+    })
+    test('POST /endpoint', async () => {
+        const res = await app.request('/endpoint', { method: 'POST' })
+        expect(res.status).toBe(200)
+        expect(await res.text()).toBe('POST /endpoint')
+    })
+    test('DELETE /endpoint', async () => {
+        const res = await app.request('/endpoint', { method: 'DELETE' })
+        expect(res.status).toBe(200)
+        expect(await res.text()).toBe('DELETE /endpoint')
+    })
+
+})
