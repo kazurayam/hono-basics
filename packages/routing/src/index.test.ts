@@ -111,3 +111,11 @@ describe('Path Parameter', () => {
         })
     })
 })
+
+describe('Optional Parameter', () => {
+    test('GET /api/animal/:type', async () => {
+        const res = await app.request('/api/animal/lizard', { method: 'GET' })
+        expect(res.status).toBe(200)
+        expect(await res.text()).toBe('Animal lizard!')
+    })
+})

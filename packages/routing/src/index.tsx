@@ -44,7 +44,15 @@ app.get('/posts/:id/comment/:comment_id', async (c) => {
     return c.text(`post id: ${id}, comment id: ${comment_id}`)
 })
 
-
-
+// Optional Parameter
+// Will match /api/animal and /api/animal/:type
+app.get('/api/animal/:type?', (c) => {
+    let t = ''
+    const { type } = c.req.param()
+    if (type) {
+        t = type
+    }
+    return c.text(`Animal ${t}!`)
+})
 
 export default app
