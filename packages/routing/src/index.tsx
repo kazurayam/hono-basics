@@ -18,18 +18,33 @@ app.all('/hello', (c) => c.text('Any Method /hello'))
 
 // Custom HTTP method
 app.on('PURGE', '/cache', (c) => c.text('PURGE Method /cache'))
-export default app
+
 
 // Multiple Methods
-/*
+/* No overload matches here
 app.on(['PUT', 'DELETE'], '/post', (c) => {
-    c.text('PUT or DELETE /post')
+    return c.text('PUT or DELETE /post')
 })
 */
 
 /* No overload matcheres here
 // Multiple Paths
 app.on('GET', ['/hi', '/ja/hi', '/en/hi'], (c) => {
-    c.text('Hello')
+    return c.text('Hello')
 })
     */
+
+// Path Parameter
+app.get('/user/:name', async (c) => {
+    const name = c.req.param('name')
+    return c.text(`Hi ${name}`)
+})
+app.get('/posts/:id/comment/:comment_id', async (c) => {
+    const { id, comment_id } = c.req.param()
+    return c.text(`post id: ${id}, comment id: ${comment_id}`)
+})
+
+
+
+
+export default app

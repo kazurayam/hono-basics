@@ -97,4 +97,17 @@ describe('Basic', () => {
         */
 })
 
-
+describe('Path Parameter', () => {
+    describe('single parameter', () => {
+        test('GET /user/:name', async () => {
+            const res = await app.request('/user/kazurayam', { method: 'GET' })
+            expect(res.status).toBe(200)
+            expect(await res.text()).toBe('Hi kazurayam')
+        })
+        test('GET /posts/123/comment/456', async () => {
+            const res = await app.request('/posts/123/comment/456', { method: 'GET' })
+            expect(res.status).toBe(200)
+            expect(await res.text()).toBe('post id: 123, comment id: 456')
+        })
+    })
+})
