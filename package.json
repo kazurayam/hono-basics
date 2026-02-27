@@ -20,7 +20,9 @@
     "jsxserver": "bun --cwd ./packages/jsx --hot ./src/index.tsx",
     "jsxhtmlserver": "bun --cwd ./packages/jsx-html --hot ./src/index.tsx",
     "jsxrendererserver": "bun --cwd ./packages/jsx-renderer --hot ./src/index.tsx",
-    "routingserver": "bun --cwd ./packages/routing --hot ./src/index.tsx"
+    "routingserver": "bun --cwd ./packages/routing --hot ./src/index.tsx",
+    "routingwithhostnameserver": "bun --cwd ./packages/routing --hot ./src/withHostname.tsx"
+
 },
   "devDependencies": {
     "@types/bun": "latest"
