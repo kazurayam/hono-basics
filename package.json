@@ -7,12 +7,14 @@
     "packages/*"
   ],
   "scripts": {
+    "test": "bun test --cwd ./packages/html; bun test --cwd  ./packages/jsx; bun test --cwd  ./packages/routing; bun test --cwd ./packages/rpcserver; bun test --cwd ./packages/rpcclient; bun test --cwd ./packages/testclient; bun test --cwd ./packages/testing",
+    "test:html": "bun test --cwd ./packages/html",
+    "test:jsx": "bun test --cwd  ./packages/jsx",
+    "test:routing": "bun test --cwd  ./packages/routing",
     "test:rpcserver": "bun test --cwd ./packages/rpcserver",
     "test:rpcclient": "bun test --cwd ./packages/rpcclient",
     "test:testclient": "bun test --cwd ./packages/testclient",
     "test:testing": "bun test --cwd ./packages/testing",
-    "test:html": "bun test --cwd ./packages/html",
-    "test:routing": "bun test --cwd  ./packages/routing",
     "docs": "cd docs; ./adoc2md.sh -t; cd ~",
     "rpcserver": "bun --cwd ./packages/rpcserver --watch ./src/server.ts",
     "rpcclient": "bun --cwd ./packages/rpcclient --watch ./src/client.ts",
@@ -22,9 +24,9 @@
     "jsxrendererserver": "bun --cwd ./packages/jsx-renderer --hot ./src/index.tsx",
     "routingserver": "bun --cwd ./packages/routing --hot ./src/index.tsx",
     "routingwithhostnameserver": "bun --cwd ./packages/routing --hot ./src/withHostname.tsx"
-
-},
+  },
   "devDependencies": {
+    "@happy-dom/global-registrator": "^20.7.0",
     "@types/bun": "latest"
   },
   "peerDependencies": {

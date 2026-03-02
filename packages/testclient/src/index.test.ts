@@ -1,5 +1,8 @@
 // testclient/src/index.test.ts
 // See https://hono.dev/docs/helpers/testing for explanation
+/*
+ * The testClient() function takes an instance of Hono as its first argument and returns an object typed according to your Hono application's routes, similar to the Hono Client. This allows you to call your defined routes in a type-safe manner with editor autocompletion within your tests.
+ */
 
 import { describe, test, expect } from 'bun:test'
 import { testClient } from 'hono/testing'
