@@ -1,6 +1,11 @@
 // Async Component
 import { Hono } from 'hono'
 
+/**
+ * hono/jsx supports an Async Component, so you can use async/await in your component.
+ * If you render it with c.html(), it will await automatically.
+ */
+
 const app = new Hono()
 
 const AsyncComponent = async () => {
