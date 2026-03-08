@@ -1,6 +1,9 @@
 import { Hono } from 'hono'
 import { html } from 'hono/html'
 
+/**
+ * Combine the JSX and html middlewares for powerful templating.
+ */
 const app = new Hono()
 
 interface SiteData {
@@ -9,6 +12,7 @@ interface SiteData {
 }
 
 const Layout = (props: SiteData) =>
+    // use the html Middleware to create a layout template
     html`<!doctype html>
     <html>
       <head>
@@ -21,6 +25,7 @@ const Layout = (props: SiteData) =>
 
 const Content = (props: { siteData: SiteData; name: string }) => (
     <Layout {...props.siteData}>
+        // use the JSX Middleware to create a content component
         <h1>Hello {props.name}</h1>
     </Layout>
 )
