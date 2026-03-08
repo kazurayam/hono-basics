@@ -24,7 +24,8 @@
     "jsxhtmlserver": "bun --cwd ./packages/jsx-html --hot ./src/index.tsx",
     "jsxrendererserver": "bun --cwd ./packages/jsx-renderer --hot ./src/index.tsx",
     "routingserver": "bun --cwd ./packages/routing --hot ./src/index.tsx",
-    "routingwithhostnameserver": "bun --cwd ./packages/routing --hot ./src/withHostname.tsx"
+    "routingwithhostnameserver": "bun --cwd ./packages/routing --hot ./src/withHostname.tsx",
+    "reactdev": "bun --cwd ./packages/react --hot ./src/index.tsx"
   },
   "devDependencies": {
     "@happy-dom/global-registrator": "^20.7.0",
