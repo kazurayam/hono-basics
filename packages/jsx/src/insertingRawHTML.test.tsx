@@ -1,4 +1,4 @@
-// html/src/insertingRawHTML.test.ts
+// jsx/src/insertingRawHTML.test.ts
 import { describe, test, expect } from 'bun:test'
 import app from './insertingRawHTML'
 
