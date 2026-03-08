@@ -17,7 +17,7 @@ app.use('*', async (c, next) => {
 
 const Header = memo(() => <header>Welcome to Hono</header>)
 const Footer = memo(() => <footer>Powered by Hono</footer>)
-app.get('/memorization', (c) => {
+app.get('/memoization', (c) => {
     return c.render(
         <>
             <Header />
@@ -26,4 +26,6 @@ app.get('/memorization', (c) => {
         </>
     )
 })
+
+export default app
 
