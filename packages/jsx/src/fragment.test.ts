@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'bun:test'
 import { testClient } from 'hono/testing'
-import app from './metadataHoisting'
+import app from './fragment'
 
 describe('verify HTML as DOM', () => {
     const client = testClient(app)
@@ -17,6 +17,11 @@ describe('verify HTML as DOM', () => {
         expect(title?.textContent).toBe(`About Page`)
         expect(meta?.getAttribute('name')).toBe('description')
         expect(meta?.getAttribute('content')).toBe('This is the about page')
+        const list = doc.querySelectorAll('p')
+        list.forEach((p) => {
+            console.log(p.textContent)
+        })
+        //expect(list.length).toBe(4)
     })
 })
 

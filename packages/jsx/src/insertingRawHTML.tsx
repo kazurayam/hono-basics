@@ -18,3 +18,6 @@ app.get('/foo', (c) => {
     const inner = { __html: 'JSX &middot; SSR' }   // &middot; is a middle-dot
     return c.render(<div dangerouslySetInnerHTML={inner} />)
 })
+
+export default app
+

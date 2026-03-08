@@ -41,3 +41,6 @@ const List = () => {
         </>
     )
 }
+
+
+export default app
